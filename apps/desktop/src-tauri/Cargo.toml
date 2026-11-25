@@ -1,0 +1,20 @@
+[package]
+name = "dns-optimizer-desktop"
+version = "1.0.0"
+edition = "2021"
+license = "MIT"
+description = "Cross-platform Tauri v2 desktop and Android application for DNS Optimizer"
+
+[lib]
+name = "dns_optimizer_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+dns-core = { path = "../../../crates/dns-core" }
+tauri = { version = "2", features = [] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.41", features = ["rt-multi-thread", "macros"] }

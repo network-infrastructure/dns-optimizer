@@ -1,0 +1,65 @@
+name: Release Cross-Platform Binaries
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-cli:
+    name: CLI (${{ matrix.target }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            bin: dns-optimizer.exe
+            archive: dns-optimizer-windows-x86_64.zip
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            bin: dns-optimizer
+            archive: dns-optimizer-macos-arm64.tar.gz
+          - os: macos-latest
+            target: x86_64-apple-darwin
+            bin: dns-optimizer
+            archive: dns-optimizer-macos-x86_64.tar.gz
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            bin: dns-optimizer
+            archive: dns-optimizer-linux-x86_64.tar.gz
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
+      - name: Build release binary
+        run: cargo build --release --target ${{ matrix.target }} --bin dns-optimizer
+      - name: Package Unix archive
+        if: runner.os != 'Windows'
+        run: tar -czf ${{ matrix.archive }} -C target/${{ matrix.target }}/release ${{ matrix.bin }}
+      - name: Package Windows archive
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: Compress-Archive -Path target/${{ matrix.target }}/release/${{ matrix.bin }} -DestinationPath ${{ matrix.archive }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.archive }}
+          path: ${{ matrix.archive }}
+
+  build-android-lib:
+    name: Android FFI (aarch64-linux-android)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android
+      - name: Check Android library target
+        run: cargo check -p dns-core --target aarch64-linux-android

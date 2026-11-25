@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNS Optimizer v1.0</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-name">DNS Optimizer</span>
+      <span class="brand-version">v1.0</span>
+    </div>
+    <div class="status-bar" id="system-status">Reading system DNS...</div>
+    <div class="topbar-actions">
+      <button type="button" class="btn btn-outline" id="btn-restore">Restore DNS</button>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <h1>Find the best DNS for you</h1>
+      <p class="subtitle">Faster browsing. Better privacy. Safer internet.</p>
+
+      <div class="controls-row">
+        <div class="goal-group" role="radiogroup" aria-label="DNS goal">
+          <button type="button" class="cell active" data-profile="speed">Maximum speed</button>
+          <button type="button" class="cell" data-profile="privacy">Privacy</button>
+          <button type="button" class="cell" data-profile="adblock">Block ads</button>
+          <button type="button" class="cell" data-profile="family">Family protection</button>
+        </div>
+
+        <div class="proto-group" role="radiogroup" aria-label="DNS transport">
+          <button type="button" class="cell active" data-proto="udp">UDP/53</button>
+          <button type="button" class="cell" data-proto="doh">DoH</button>
+          <button type="button" class="cell" data-proto="dot">DoT</button>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button type="button" class="btn btn-primary" id="btn-start-bench">Start DNS Speed Test</button>
+        <span class="action-note" id="bench-status">Measures real DNS query resolution time, not ICMP ping.</span>
+      </div>
+    </section>
+
+    <section class="plate" id="recommended-plate" hidden>
+      <div>
+        <div class="plate-label">Recommended DNS</div>
+        <div class="plate-title" id="rec-name">Cloudflare 1.1.1.1</div>
+        <div class="plate-meta" id="rec-meta">Lowest response time from your network</div>
+      </div>
+      <div class="plate-right">
+        <div class="plate-figure" id="rec-ms">8 ms</div>
+        <button type="button" class="btn btn-primary" id="btn-apply-rec">Apply DNS</button>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button type="button" class="tab active" data-tab="bench">Speed Test Results</button>
+      <button type="button" class="tab" data-tab="privacy">Privacy &amp; Leak Test</button>
+      <button type="button" class="tab" data-tab="adblock">Ad Blocking Test</button>
+      <button type="button" class="tab" data-tab="history">History &amp; Auto Switch</button>
+    </nav>
+
+    <section class="panel" id="panel-bench">
+      <table class="board">
+        <thead>
+          <tr>
+            <th>Server</th>
+            <th>IPv4</th>
+            <th>Median</th>
+            <th>Min</th>
+            <th>Success</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="bench-tbody">
+          <tr>
+            <td colspan="6" class="empty">Run Start DNS Speed Test to measure resolvers from your network.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel" id="panel-privacy" hidden>
+      <div class="panel-head">
+        <button type="button" class="btn btn-outline" id="btn-run-privacy">Run Privacy &amp; DNSSEC Test</button>
+      </div>
+      <div id="privacy-output" class="diag-box">Checks active system resolvers, ISP leak risk, and DNSSEC validation via dnssec-failed.org.</div>
+    </section>
+
+    <section class="panel" id="panel-adblock" hidden>
+      <div class="panel-head">
+        <input type="text" id="adblock-ip" value="94.140.14.14" aria-label="DNS server IPv4">
+        <button type="button" class="btn btn-outline" id="btn-run-adblock">Run Ad Blocking Test</button>
+      </div>
+      <div id="adblock-output" class="diag-box">Queries known ad and tracker domains to check whether the resolver sinkholes them.</div>
+    </section>
+
+    <section class="panel" id="panel-history" hidden>
+      <div class="panel-head">
+        <button type="button" class="btn btn-outline" id="btn-refresh-history">Refresh History</button>
+        <button type="button" class="btn btn-outline" id="btn-health-check">Run Auto Switch Check</button>
+      </div>
+      <div id="history-output" class="diag-box">Saved benchmark runs appear here.</div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

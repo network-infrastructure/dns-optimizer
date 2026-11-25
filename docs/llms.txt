@@ -1,0 +1,39 @@
+# DNS Optimizer
+
+> Open-source Rust DNS benchmark, speed test, and cross-platform DNS changer for Windows, macOS, Linux, Android, and Web.
+
+- Repository: https://github.com/network-infrastructure/dns-optimizer
+- Website: https://network-infrastructure.github.io/dns-optimizer/
+- License: MIT
+- Catalog JSON: https://network-infrastructure.github.io/dns-optimizer/dns_servers.json
+
+## Core capabilities
+- Real RFC 1035 DNS lookup latency benchmark (UDP/53, TCP/53, DoT, DoH) rather than ICMP ping
+- One-click cross-platform system DNS changer with automatic backup and restore
+- Smart profiles: Maximum speed, Privacy, Ad blocking, Family protection
+- DNS Privacy & DNSSEC validation test (dnssec-failed.org SERVFAIL check)
+- Ad-blocking sinkhole verification test
+- Auto Switch health monitor and local JSONL speed history
+- Android Private DNS (DoT) guide and C-ABI / Tauri v2 mobile support
+
+## Pages
+- https://network-infrastructure.github.io/dns-optimizer/
+- https://network-infrastructure.github.io/dns-optimizer/dns-speed-test/
+- https://network-infrastructure.github.io/dns-optimizer/dns-benchmark/
+- https://network-infrastructure.github.io/dns-optimizer/dns-changer/
+- https://network-infrastructure.github.io/dns-optimizer/fastest-dns/
+- https://network-infrastructure.github.io/dns-optimizer/gaming/
+- https://network-infrastructure.github.io/dns-optimizer/ps5/
+- https://network-infrastructure.github.io/dns-optimizer/xbox/
+- https://network-infrastructure.github.io/dns-optimizer/android/
+- https://network-infrastructure.github.io/dns-optimizer/iphone/
+- https://network-infrastructure.github.io/dns-optimizer/windows/
+- https://network-infrastructure.github.io/dns-optimizer/privacy/
+- https://network-infrastructure.github.io/dns-optimizer/ad-blocking/
+- https://network-infrastructure.github.io/dns-optimizer/family/
+- https://network-infrastructure.github.io/dns-optimizer/leak-test/
+- https://network-infrastructure.github.io/dns-optimizer/checker/
+- https://network-infrastructure.github.io/dns-optimizer/cloudflare-vs-google/
+- https://network-infrastructure.github.io/dns-optimizer/countries/usa/
+- https://network-infrastructure.github.io/dns-optimizer/countries/uk/
+- https://network-infrastructure.github.io/dns-optimizer/countries/india/

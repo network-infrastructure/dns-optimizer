@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad Blocking DNS: Block Ads and Trackers at the Network Level | DNS Optimizer</title>
+  <meta name="description" content="Compare free ad-blocking DNS servers including AdGuard DNS, Mullvad Adblock, Control D, and NextDNS. Test real domain sinkhole filtering in Rust.">
+  <link rel="canonical" href="https://network-infrastructure.github.io/dns-optimizer/ad-blocking/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Ad Blocking DNS: Block Ads and Trackers at the Network Level">
+  <meta property="og:description" content="Compare free ad-blocking DNS servers including AdGuard DNS, Mullvad Adblock, Control D, and NextDNS. Test real domain sinkhole filtering in Rust.">
+  <meta property="og:url" content="https://network-infrastructure.github.io/dns-optimizer/ad-blocking/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "DNS Optimizer", "item": "https://network-infrastructure.github.io/dns-optimizer/" },
+      { "@type": "ListItem", "position": 2, "name": "Ad blocking DNS", "item": "https://network-infrastructure.github.io/dns-optimizer/ad-blocking/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../">
+        <span>DNS Optimizer</span>
+        <span class="brand-ver">v1.0</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../dns-speed-test/">Speed test</a></li>
+          <li><a href="../dns-changer/">DNS changer</a></li>
+          <li><a href="../privacy/">Privacy</a></li>
+          <li><a href="../ad-blocking/">Ad blocking</a></li>
+          <li><a href="../checker/">Checker</a></li>
+          <li><a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Ad blocking DNS</h1>
+          <p class="hero-lead">Filter advertising, analytics, and telemetry domains across every app and smart TV on your network.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="https://github.com/network-infrastructure/dns-optimizer">Download Rust app</a>
+            <a class="btn" href="../">All DNS guides</a>
+          </div>
+        </div>
+        <div class="board-shell" data-bench-board data-initial-profile="adblock">
+    <div class="board-top">
+      <div class="board-title" data-bench-sub>Ad blocking DNS live DoH test (demo values before live DoH test)</div>
+      <button type="button" class="btn btn--primary btn--sm" data-bench-start>Start DNS Speed Test</button>
+    </div>
+    <div class="choice-row" role="group" aria-label="DNS goal profile">
+      <button type="button" class="choice-btn" data-profile="speed">Speed</button>
+      <button type="button" class="choice-btn" data-profile="privacy">Privacy</button>
+      <button type="button" class="choice-btn" data-profile="adblock">Ad block</button>
+      <button type="button" class="choice-btn" data-profile="family">Family</button>
+    </div>
+    <div class="board-rows" data-bench-rows></div>
+    <div class="board-plate">
+      <div>
+        <div class="plate-label">Recommended DNS</div>
+        <div class="plate-winner" data-bench-winner>Cloudflare (1.1.1.1)</div>
+        <div class="plate-label" data-bench-note>Browser tests DoH. Run the Rust app for UDP/53 and one-click apply.</div>
+      </div>
+      <div class="plate-figure" data-bench-figure>8 ms</div>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Recommended DNS servers</h2>
+        </div>
+        <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Resolver</th>
+          <th>IPv4</th>
+          <th>DoT hostname</th>
+          <th>DNSSEC</th>
+          <th>Filtering</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>AdGuard DNS Default</td>
+        <td>94.140.14.14, 94.140.15.15</td>
+        <td>dns.adguard-dns.com</td>
+        <td>Yes</td>
+        <td>Ads, Trackers, Phishing, Malware</td>
+      </tr>
+<tr>
+        <td>Mullvad DNS (Adblock)</td>
+        <td>194.242.2.3</td>
+        <td>adblock.dns.mullvad.net</td>
+        <td>Yes</td>
+        <td>Ads, Trackers</td>
+      </tr>
+<tr>
+        <td>Control D Free (Ads + Trackers)</td>
+        <td>76.76.2.2, 76.76.10.2</td>
+        <td>p2.freedns.controld.com</td>
+        <td>Yes</td>
+        <td>Malware, Phishing, Ads, Trackers</td>
+      </tr>
+<tr>
+        <td>NextDNS</td>
+        <td>45.90.28.0, 45.90.30.0</td>
+        <td>dns.nextdns.io</td>
+        <td>Yes</td>
+        <td>Ads, Trackers, Malware, Phishing, Adult, Custom</td>
+      </tr>
+<tr>
+        <td>RethinkDNS</td>
+        <td>-</td>
+        <td>sky.rethinkdns.com</td>
+        <td>Yes</td>
+        <td>Ads, Trackers, Malware, Custom</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap">
+        
+      <h2>How DNS-level ad blocking works</h2>
+      <p>When an app tries to load a tracker or ad network domain, a filtering resolver returns <code>0.0.0.0</code>, <code>::</code>, or <code>NXDOMAIN</code> instead of the real IP address. The connection never starts.</p>
+      <h2>Limitations to know</h2>
+      <p>DNS blocking cannot remove ads served from the exact same hostname as the main content, such as first-party video ads. Combine it with a browser content blocker for full coverage.</p>
+    
+        <h2>Rust CLI command</h2>
+        <pre class="cli-block"><code>dns-optimizer bench --profile adblock
+dns-optimizer test-adblock --server 94.140.14.14</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-statement">Free MIT-licensed Rust software for real DNS benchmarks and safe resolver switching.</p>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../dns-speed-test/">Speed test</a>
+        <a href="../dns-changer/">DNS changer</a>
+        <a href="../leak-test/">Leak test</a>
+        <a href="../checker/">Checker</a>
+        <a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a>
+      </div>
+      <p class="muted">Changing DNS speeds up domain lookups, not active in-game ping.</p>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

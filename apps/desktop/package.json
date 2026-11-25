@@ -1,0 +1,16 @@
+{
+  "name": "dns-optimizer-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DNS Optimizer desktop and Android app powered by Rust and Tauri v2",
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "android:init": "tauri android init",
+    "android:build": "tauri android build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.1.0"
+  }
+}

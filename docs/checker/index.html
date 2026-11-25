@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DNS Checker: Query Live A, AAAA, MX, TXT, and NS Records | DNS Optimizer</title>
+  <meta name="description" content="Check live DNS propagation across Cloudflare, Google DNS, and Quad9 right from your browser using DNS-over-HTTPS.">
+  <link rel="canonical" href="https://network-infrastructure.github.io/dns-optimizer/checker/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DNS Checker: Query Live A, AAAA, MX, TXT, and NS Records">
+  <meta property="og:description" content="Check live DNS propagation across Cloudflare, Google DNS, and Quad9 right from your browser using DNS-over-HTTPS.">
+  <meta property="og:url" content="https://network-infrastructure.github.io/dns-optimizer/checker/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "DNS Optimizer", "item": "https://network-infrastructure.github.io/dns-optimizer/" },
+      { "@type": "ListItem", "position": 2, "name": "DNS checker", "item": "https://network-infrastructure.github.io/dns-optimizer/checker/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../">
+        <span>DNS Optimizer</span>
+        <span class="brand-ver">v1.0</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../dns-speed-test/">Speed test</a></li>
+          <li><a href="../dns-changer/">DNS changer</a></li>
+          <li><a href="../privacy/">Privacy</a></li>
+          <li><a href="../ad-blocking/">Ad blocking</a></li>
+          <li><a href="../checker/">Checker</a></li>
+          <li><a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>DNS checker</h1>
+          <p class="hero-lead">Inspect live DNS records across Cloudflare, Google DNS, and Quad9 from your browser.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="https://github.com/network-infrastructure/dns-optimizer">Download Rust app</a>
+            <a class="btn" href="../">All DNS guides</a>
+          </div>
+        </div>
+        <div class="box">
+        <h3>Run native Rust CLI</h3>
+        <pre class="cli-block"><code>dns-optimizer bench --profile speed --protocol doh</code></pre>
+        <a class="btn btn--primary btn--sm" href="https://github.com/network-infrastructure/dns-optimizer">Get Rust app on GitHub</a>
+      </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Live DoH record lookup</h2>
+          </div>
+          <form class="form-row" data-dns-checker>
+            <input class="input" type="text" name="domain" value="example.com" aria-label="Domain name" required>
+            <select class="input" name="rtype" aria-label="Record type">
+              <option value="A">A</option>
+              <option value="AAAA">AAAA</option>
+              <option value="MX">MX</option>
+              <option value="TXT">TXT</option>
+              <option value="NS">NS</option>
+            </select>
+            <button type="submit" class="btn btn--primary">Check DNS</button>
+          </form>
+          <pre class="cli-block" data-checker-output>Enter a domain name and click Check DNS to query Cloudflare, Google, and Quad9.</pre>
+        </div>
+      </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Recommended DNS servers</h2>
+        </div>
+        <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Resolver</th>
+          <th>IPv4</th>
+          <th>DoT hostname</th>
+          <th>DNSSEC</th>
+          <th>Filtering</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>Cloudflare 1.1.1.1</td>
+        <td>1.1.1.1, 1.0.0.1</td>
+        <td>one.one.one.one</td>
+        <td>Yes</td>
+        <td>None</td>
+      </tr>
+<tr>
+        <td>Google Public DNS</td>
+        <td>8.8.8.8, 8.8.4.4</td>
+        <td>dns.google</td>
+        <td>Yes</td>
+        <td>None</td>
+      </tr>
+<tr>
+        <td>Quad9 Recommended</td>
+        <td>9.9.9.9, 149.112.112.112</td>
+        <td>dns.quad9.net</td>
+        <td>Yes</td>
+        <td>Malware, Phishing</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap">
+        
+      <h2>Checking DNS propagation</h2>
+      <p>After updating nameservers or domain records, different recursive resolvers expire cached TTL entries at different times. Querying three independent global Anycast networks shows whether your new records are live.</p>
+    
+        <h2>Rust CLI command</h2>
+        <pre class="cli-block"><code>dns-optimizer bench --profile speed --protocol doh</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-statement">Free MIT-licensed Rust software for real DNS benchmarks and safe resolver switching.</p>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../dns-speed-test/">Speed test</a>
+        <a href="../dns-changer/">DNS changer</a>
+        <a href="../leak-test/">Leak test</a>
+        <a href="../checker/">Checker</a>
+        <a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a>
+      </div>
+      <p class="muted">Changing DNS speeds up domain lookups, not active in-game ping.</p>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

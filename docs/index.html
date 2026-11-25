@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" data-base="./">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best DNS Servers: Free DNS Benchmark, Speed Test &amp; DNS Changer</title>
+  <meta name="description" content="Find the fastest and most secure DNS servers for your network. Free, open-source Rust DNS benchmark and DNS changer for Windows, macOS, Linux, and Android.">
+  <link rel="canonical" href="https://network-infrastructure.github.io/dns-optimizer/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Best DNS Servers: Free DNS Benchmark, Speed Test &amp; DNS Changer">
+  <meta property="og:description" content="Find the fastest and most secure DNS servers for your network. Free, open-source Rust DNS benchmark and DNS changer for Windows, macOS, Linux, and Android.">
+  <meta property="og:url" content="https://network-infrastructure.github.io/dns-optimizer/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DNS Optimizer",
+    "softwareVersion": "1.0.0",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows, macOS, Linux, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "url": "https://network-infrastructure.github.io/dns-optimizer/",
+    "codeRepository": "https://github.com/network-infrastructure/dns-optimizer",
+    "license": "https://opensource.org/licenses/MIT"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="./">
+        <span>DNS Optimizer</span>
+        <span class="brand-ver">v1.0</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="./dns-speed-test/">Speed test</a></li>
+          <li><a href="./dns-changer/">DNS changer</a></li>
+          <li><a href="./privacy/">Privacy</a></li>
+          <li><a href="./ad-blocking/">Ad blocking</a></li>
+          <li><a href="./checker/">Checker</a></li>
+          <li><a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Find the best DNS for you</h1>
+          <p class="hero-lead">Measure real DNS query latency and switch resolvers in one Rust app.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#download">Download Rust app</a>
+            <a class="btn" href="./dns-speed-test/">Full speed test</a>
+          </div>
+        </div>
+
+        <div class="board-shell" data-bench-board data-initial-profile="speed">
+          <div class="board-top">
+            <div class="board-title" data-bench-sub>Benchmark results (demo)</div>
+            <button type="button" class="btn btn--primary btn--sm" data-bench-start>Start DNS Speed Test</button>
+          </div>
+          <div class="choice-row" role="group" aria-label="DNS goal profile">
+            <button type="button" class="choice-btn" data-profile="speed">Speed</button>
+            <button type="button" class="choice-btn" data-profile="privacy">Privacy</button>
+            <button type="button" class="choice-btn" data-profile="adblock">Ad block</button>
+            <button type="button" class="choice-btn" data-profile="family">Family</button>
+          </div>
+          <div class="board-rows" data-bench-rows>
+            <div class="bench-row">
+              <div class="bench-name">Cloudflare</div>
+              <div class="bench-ip">1.1.1.1</div>
+              <div class="bench-ms">8 ms</div>
+            </div>
+            <div class="bench-row">
+              <div class="bench-name">Google DNS</div>
+              <div class="bench-ip">8.8.8.8</div>
+              <div class="bench-ms">14 ms</div>
+            </div>
+            <div class="bench-row">
+              <div class="bench-name">Quad9</div>
+              <div class="bench-ip">9.9.9.9</div>
+              <div class="bench-ms">19 ms</div>
+            </div>
+            <div class="bench-row">
+              <div class="bench-name">AdGuard DNS</div>
+              <div class="bench-ip">94.140.14.14</div>
+              <div class="bench-ms">23 ms</div>
+            </div>
+            <div class="bench-row">
+              <div class="bench-name">Current DNS</div>
+              <div class="bench-ip">ISP Default</div>
+              <div class="bench-ms">42 ms</div>
+            </div>
+          </div>
+          <div class="board-plate">
+            <div>
+              <div class="plate-label">Recommended DNS</div>
+              <div class="plate-winner" data-bench-winner>Cloudflare (1.1.1.1)</div>
+              <div class="plate-label" data-bench-note>Browser tests DoH. Rust app tests UDP/53 and applies DNS.</div>
+            </div>
+            <div class="plate-figure" data-bench-figure>8 ms</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="platforms">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>One Rust engine, every platform</h2>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Platform</th>
+                <th>Stack</th>
+                <th>Capabilities</th>
+                <th>Guide</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Windows</td>
+                <td>Rust + Tauri</td>
+                <td>UDP/53, DoH, DoT, netsh switch</td>
+                <td><a href="./windows/">Windows</a></td>
+              </tr>
+              <tr>
+                <td>macOS</td>
+                <td>Rust + Tauri</td>
+                <td>Query timing, networksetup restore</td>
+                <td><a href="./dns-changer/">macOS</a></td>
+              </tr>
+              <tr>
+                <td>Linux</td>
+                <td>Rust CLI</td>
+                <td>nmcli switch, failover daemon</td>
+                <td><a href="./dns-benchmark/">Linux</a></td>
+              </tr>
+              <tr>
+                <td>Android</td>
+                <td>Rust FFI</td>
+                <td>Private DNS (DoT) hostnames</td>
+                <td><a href="./android/">Android</a></td>
+              </tr>
+              <tr>
+                <td>Web</td>
+                <td>Static DoH</td>
+                <td>Browser DoH test and catalog</td>
+                <td><a href="./dns-speed-test/">Browser</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Core DNS tools</h2>
+        </div>
+        <div class="grid-3">
+          <div class="box">
+            <h3>Speed Test</h3>
+            <p class="muted">RFC 1035 lookup timing.</p>
+          </div>
+          <div class="box">
+            <h3>DNS Changer</h3>
+            <p class="muted">One-click switch and backup.</p>
+          </div>
+          <div class="box">
+            <h3>Smart Profiles</h3>
+            <p class="muted">Speed, privacy, ads, family.</p>
+          </div>
+          <div class="box">
+            <h3>Privacy Test</h3>
+            <p class="muted">ISP leak and DNSSEC check.</p>
+          </div>
+          <div class="box">
+            <h3>Ad Block Test</h3>
+            <p class="muted">Verifies ad domain sinkholes.</p>
+          </div>
+          <div class="box">
+            <h3>Auto Switch</h3>
+            <p class="muted">Failover monitor and history.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ink" id="download">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Run the Rust CLI</h2>
+          <p class="muted">Build from source with Cargo or grab release binaries on GitHub.</p>
+        </div>
+        <pre class="cli-block"><code>git clone https://github.com/network-infrastructure/dns-optimizer.git
+cd dns-optimizer
+cargo run --release --bin dns-optimizer -- bench --profile speed
+cargo run --release --bin dns-optimizer -- apply cloudflare-standard --dry-run
+cargo run --release --bin dns-optimizer -- restore</code></pre>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="https://github.com/network-infrastructure/dns-optimizer">GitHub source</a>
+          <a class="btn" href="./dns_servers.json">JSON catalog</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="guides">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Guides and tools</h2>
+        </div>
+        <div class="route-grid">
+          <a class="route-link" href="./dns-speed-test/">DNS speed test</a>
+          <a class="route-link" href="./dns-benchmark/">DNS benchmark</a>
+          <a class="route-link" href="./dns-changer/">DNS changer</a>
+          <a class="route-link" href="./fastest-dns/">Fastest DNS</a>
+          <a class="route-link" href="./gaming/">Gaming DNS</a>
+          <a class="route-link" href="./ps5/">PlayStation 5 DNS</a>
+          <a class="route-link" href="./xbox/">Xbox DNS</a>
+          <a class="route-link" href="./android/">Android DNS</a>
+          <a class="route-link" href="./iphone/">iPhone DNS</a>
+          <a class="route-link" href="./windows/">Windows DNS</a>
+          <a class="route-link" href="./privacy/">Privacy DNS</a>
+          <a class="route-link" href="./ad-blocking/">Ad blocking DNS</a>
+          <a class="route-link" href="./family/">Family DNS</a>
+          <a class="route-link" href="./leak-test/">DNS leak test</a>
+          <a class="route-link" href="./checker/">DNS checker</a>
+          <a class="route-link" href="./cloudflare-vs-google/">Cloudflare vs Google</a>
+          <a class="route-link" href="./countries/usa/">United States DNS</a>
+          <a class="route-link" href="./countries/uk/">United Kingdom DNS</a>
+          <a class="route-link" href="./countries/india/">India DNS</a>
+          <a class="route-link" href="https://github.com/network-infrastructure/public-dns-servers">Public catalog</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-statement">Free MIT-licensed Rust software for real DNS benchmarks and safe resolver switching.</p>
+      <div class="footer-links">
+        <a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a>
+        <a href="./dns-speed-test/">Speed test</a>
+        <a href="./leak-test/">Leak test</a>
+        <a href="./checker/">Checker</a>
+        <a href="./llms.txt">llms.txt</a>
+        <a href="./sitemap.xml">sitemap.xml</a>
+      </div>
+      <p class="muted">Changing DNS speeds up lookups, not active in-game ping.</p>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

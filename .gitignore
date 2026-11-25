@@ -1,0 +1,7 @@
+/target
+/apps/desktop/src-tauri/target
+/apps/desktop/node_modules
+.DS_Store
+*.swp
+*.bak
+.hallmark/

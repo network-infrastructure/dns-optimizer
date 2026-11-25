@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best DNS for Android: Private DNS (DoT) Hostnames and Ad Blocking | DNS Optimizer</title>
+  <meta name="description" content="Configure encrypted Private DNS on Android 9 and newer with zero extra apps, or build Android support from the DNS Optimizer Rust core.">
+  <link rel="canonical" href="https://network-infrastructure.github.io/dns-optimizer/android/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Best DNS for Android: Private DNS (DoT) Hostnames and Ad Blocking">
+  <meta property="og:description" content="Configure encrypted Private DNS on Android 9 and newer with zero extra apps, or build Android support from the DNS Optimizer Rust core.">
+  <meta property="og:url" content="https://network-infrastructure.github.io/dns-optimizer/android/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "DNS Optimizer", "item": "https://network-infrastructure.github.io/dns-optimizer/" },
+      { "@type": "ListItem", "position": 2, "name": "Best DNS for Android", "item": "https://network-infrastructure.github.io/dns-optimizer/android/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../">
+        <span>DNS Optimizer</span>
+        <span class="brand-ver">v1.0</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../dns-speed-test/">Speed test</a></li>
+          <li><a href="../dns-changer/">DNS changer</a></li>
+          <li><a href="../privacy/">Privacy</a></li>
+          <li><a href="../ad-blocking/">Ad blocking</a></li>
+          <li><a href="../checker/">Checker</a></li>
+          <li><a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Best DNS for Android</h1>
+          <p class="hero-lead">Encrypt every DNS query on Wi-Fi and cellular using Android built-in Private DNS over TLS.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="https://github.com/network-infrastructure/dns-optimizer">Download Rust app</a>
+            <a class="btn" href="../">All DNS guides</a>
+          </div>
+        </div>
+        <div class="board-shell" data-bench-board data-initial-profile="adblock">
+    <div class="board-top">
+      <div class="board-title" data-bench-sub>Best DNS for Android live DoH test (demo values before live DoH test)</div>
+      <button type="button" class="btn btn--primary btn--sm" data-bench-start>Start DNS Speed Test</button>
+    </div>
+    <div class="choice-row" role="group" aria-label="DNS goal profile">
+      <button type="button" class="choice-btn" data-profile="speed">Speed</button>
+      <button type="button" class="choice-btn" data-profile="privacy">Privacy</button>
+      <button type="button" class="choice-btn" data-profile="adblock">Ad block</button>
+      <button type="button" class="choice-btn" data-profile="family">Family</button>
+    </div>
+    <div class="board-rows" data-bench-rows></div>
+    <div class="board-plate">
+      <div>
+        <div class="plate-label">Recommended DNS</div>
+        <div class="plate-winner" data-bench-winner>Cloudflare (1.1.1.1)</div>
+        <div class="plate-label" data-bench-note>Browser tests DoH. Run the Rust app for UDP/53 and one-click apply.</div>
+      </div>
+      <div class="plate-figure" data-bench-figure>8 ms</div>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Recommended DNS servers</h2>
+        </div>
+        <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Resolver</th>
+          <th>IPv4</th>
+          <th>DoT hostname</th>
+          <th>DNSSEC</th>
+          <th>Filtering</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>AdGuard DNS Default</td>
+        <td>94.140.14.14, 94.140.15.15</td>
+        <td>dns.adguard-dns.com</td>
+        <td>Yes</td>
+        <td>Ads, Trackers, Phishing, Malware</td>
+      </tr>
+<tr>
+        <td>Cloudflare 1.1.1.1</td>
+        <td>1.1.1.1, 1.0.0.1</td>
+        <td>one.one.one.one</td>
+        <td>Yes</td>
+        <td>None</td>
+      </tr>
+<tr>
+        <td>Quad9 Recommended</td>
+        <td>9.9.9.9, 149.112.112.112</td>
+        <td>dns.quad9.net</td>
+        <td>Yes</td>
+        <td>Malware, Phishing</td>
+      </tr>
+<tr>
+        <td>Mullvad DNS (Adblock)</td>
+        <td>194.242.2.3</td>
+        <td>adblock.dns.mullvad.net</td>
+        <td>Yes</td>
+        <td>Ads, Trackers</td>
+      </tr>
+<tr>
+        <td>NextDNS</td>
+        <td>45.90.28.0, 45.90.30.0</td>
+        <td>dns.nextdns.io</td>
+        <td>Yes</td>
+        <td>Ads, Trackers, Malware, Phishing, Adult, Custom</td>
+      </tr>
+<tr>
+        <td>Control D Free (Ads + Trackers)</td>
+        <td>76.76.2.2, 76.76.10.2</td>
+        <td>p2.freedns.controld.com</td>
+        <td>Yes</td>
+        <td>Malware, Phishing, Ads, Trackers</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap">
+        
+      <h2>How to enable Private DNS on Android</h2>
+      <p>Open Settings, tap Network &amp; internet (or Connections on Samsung devices), select Private DNS, choose Private DNS provider hostname, and paste a DoT hostname such as <code>dns.adguard-dns.com</code> or <code>one.one.one.one</code>.</p>
+      <h2>Rust mobile architecture</h2>
+      <p>The <code>dns-core</code> Rust crate compiles to <code>aarch64-linux-android</code> with C-ABI exports and Tauri v2 mobile bindings so Android builds share the exact same benchmark and catalog code as desktop.</p>
+    
+        <h2>Rust CLI command</h2>
+        <pre class="cli-block"><code>dns-optimizer android adguard-default</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-statement">Free MIT-licensed Rust software for real DNS benchmarks and safe resolver switching.</p>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../dns-speed-test/">Speed test</a>
+        <a href="../dns-changer/">DNS changer</a>
+        <a href="../leak-test/">Leak test</a>
+        <a href="../checker/">Checker</a>
+        <a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a>
+      </div>
+      <p class="muted">Changing DNS speeds up domain lookups, not active in-game ping.</p>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

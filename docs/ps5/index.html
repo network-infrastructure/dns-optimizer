@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best DNS for PS5: Recommended IPv4 Addresses and Setup Steps | DNS Optimizer</title>
+  <meta name="description" content="Configure fast, reliable DNS servers on PlayStation 5. Step-by-step manual DNS settings for Cloudflare, Google DNS, and Quad9.">
+  <link rel="canonical" href="https://network-infrastructure.github.io/dns-optimizer/ps5/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Best DNS for PS5: Recommended IPv4 Addresses and Setup Steps">
+  <meta property="og:description" content="Configure fast, reliable DNS servers on PlayStation 5. Step-by-step manual DNS settings for Cloudflare, Google DNS, and Quad9.">
+  <meta property="og:url" content="https://network-infrastructure.github.io/dns-optimizer/ps5/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "DNS Optimizer", "item": "https://network-infrastructure.github.io/dns-optimizer/" },
+      { "@type": "ListItem", "position": 2, "name": "Best DNS for PS5", "item": "https://network-infrastructure.github.io/dns-optimizer/ps5/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../">
+        <span>DNS Optimizer</span>
+        <span class="brand-ver">v1.0</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../dns-speed-test/">Speed test</a></li>
+          <li><a href="../dns-changer/">DNS changer</a></li>
+          <li><a href="../privacy/">Privacy</a></li>
+          <li><a href="../ad-blocking/">Ad blocking</a></li>
+          <li><a href="../checker/">Checker</a></li>
+          <li><a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Best DNS for PS5</h1>
+          <p class="hero-lead">Test resolvers on your home network first, then enter the fastest primary and secondary IPv4 on PlayStation 5.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="https://github.com/network-infrastructure/dns-optimizer">Download Rust app</a>
+            <a class="btn" href="../">All DNS guides</a>
+          </div>
+        </div>
+        <div class="box">
+        <h3>Run native Rust CLI</h3>
+        <pre class="cli-block"><code>dns-optimizer bench --profile speed --top 5</code></pre>
+        <a class="btn btn--primary btn--sm" href="https://github.com/network-infrastructure/dns-optimizer">Get Rust app on GitHub</a>
+      </div>
+      </div>
+    </section>
+
+    
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Recommended DNS servers</h2>
+        </div>
+        <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Resolver</th>
+          <th>IPv4</th>
+          <th>DoT hostname</th>
+          <th>DNSSEC</th>
+          <th>Filtering</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>Cloudflare 1.1.1.1</td>
+        <td>1.1.1.1, 1.0.0.1</td>
+        <td>one.one.one.one</td>
+        <td>Yes</td>
+        <td>None</td>
+      </tr>
+<tr>
+        <td>Google Public DNS</td>
+        <td>8.8.8.8, 8.8.4.4</td>
+        <td>dns.google</td>
+        <td>Yes</td>
+        <td>None</td>
+      </tr>
+<tr>
+        <td>Quad9 Recommended</td>
+        <td>9.9.9.9, 149.112.112.112</td>
+        <td>dns.quad9.net</td>
+        <td>Yes</td>
+        <td>Malware, Phishing</td>
+      </tr>
+<tr>
+        <td>OpenDNS Home</td>
+        <td>208.67.222.222, 208.67.220.220</td>
+        <td>dns.opendns.com</td>
+        <td>Yes</td>
+        <td>Phishing, Malware</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap">
+        
+      <h2>How to change DNS on PlayStation 5</h2>
+      <p>Open Settings, choose Network, select Settings, and pick Set Up Internet Connection. Press the Options button on your active Wi-Fi or LAN connection, choose Advanced Settings, set DNS Settings to Manual, and enter your Primary and Secondary DNS addresses.</p>
+      <h2>What to expect on PS5</h2>
+      <p>Manual DNS can make PlayStation Store pages and CDN patch downloads connect more reliably when your ISP resolver is slow. It will not reduce active match ping after a game session starts.</p>
+    
+        <h2>Rust CLI command</h2>
+        <pre class="cli-block"><code>dns-optimizer bench --profile speed --top 5</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-statement">Free MIT-licensed Rust software for real DNS benchmarks and safe resolver switching.</p>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../dns-speed-test/">Speed test</a>
+        <a href="../dns-changer/">DNS changer</a>
+        <a href="../leak-test/">Leak test</a>
+        <a href="../checker/">Checker</a>
+        <a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a>
+      </div>
+      <p class="muted">Changing DNS speeds up domain lookups, not active in-game ping.</p>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

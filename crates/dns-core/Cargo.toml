@@ -1,0 +1,24 @@
+[package]
+name = "dns-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Core Rust DNS benchmark, wire-protocol resolver, diagnostics, and cross-platform DNS changer"
+
+[lib]
+name = "dns_core"
+crate-type = ["rlib", "staticlib", "cdylib"]
+
+[dependencies]
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+chrono.workspace = true
+rand.workspace = true
+reqwest.workspace = true
+tokio-rustls.workspace = true
+rustls.workspace = true
+webpki-roots.workspace = true
+dirs.workspace = true

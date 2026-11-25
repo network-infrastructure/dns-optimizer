@@ -1,0 +1,1608 @@
+{
+  "metadata": {
+    "title": "Public DNS Servers Directory and Benchmark Dataset",
+    "version": "2026.11",
+    "verified_date": "2026-11-25",
+    "total_servers": 40,
+    "repository": "https://github.com/network-infrastructure/public-dns-servers",
+    "website": "https://network-infrastructure.github.io/public-dns-servers/",
+    "benchmark_note": "Latency is measured live from your network via the browser DoH tester or dns_bench.py. No estimated global averages are fabricated."
+  },
+  "servers": [
+    {
+      "id": "cloudflare-standard",
+      "name": "Cloudflare 1.1.1.1",
+      "provider": "Cloudflare",
+      "category": "global",
+      "ipv4": [
+        "1.1.1.1",
+        "1.0.0.1"
+      ],
+      "ipv6": [
+        "2606:4700:4700::1111",
+        "2606:4700:4700::1001"
+      ],
+      "doh": "https://cloudflare-dns.com/dns-query",
+      "dot": "one.one.one.one",
+      "doq": null,
+      "probe_url": "https://cloudflare-dns.com/dns-query?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None"
+      ],
+      "logging": "No IP logging (24h anonymized debug logs, KPMG audited)",
+      "privacy_score": 4,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://developers.cloudflare.com/1.1.1.1/",
+      "privacy_url": "https://developers.cloudflare.com/1.1.1.1/privacy/public-dns-resolver/",
+      "notes": "Fastest global Anycast resolver across 330+ cities. Audited annually by KPMG. Drops EDNS Client Subnet to protect client IP privacy.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "cloudflare-malware",
+      "name": "Cloudflare for Families (Malware)",
+      "provider": "Cloudflare",
+      "category": "filtering",
+      "ipv4": [
+        "1.1.1.2",
+        "1.0.0.2"
+      ],
+      "ipv6": [
+        "2606:4700:4700::1112",
+        "2606:4700:4700::1002"
+      ],
+      "doh": "https://security.cloudflare-dns.com/dns-query",
+      "dot": "security.cloudflare-dns.com",
+      "doq": null,
+      "probe_url": "https://security.cloudflare-dns.com/dns-query?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing"
+      ],
+      "logging": "No IP logging (same policy as 1.1.1.1)",
+      "privacy_score": 4,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://developers.cloudflare.com/1.1.1.1/setup/",
+      "privacy_url": "https://developers.cloudflare.com/1.1.1.1/privacy/public-dns-resolver/",
+      "notes": "Blocks known malware and phishing domains using Cloudflare threat intelligence while keeping 1.1.1.1 Anycast speed.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "cloudflare-family",
+      "name": "Cloudflare for Families (Malware + Adult)",
+      "provider": "Cloudflare",
+      "category": "family",
+      "ipv4": [
+        "1.1.1.3",
+        "1.0.0.3"
+      ],
+      "ipv6": [
+        "2606:4700:4700::1113",
+        "2606:4700:4700::1003"
+      ],
+      "doh": "https://family.cloudflare-dns.com/dns-query",
+      "dot": "family.cloudflare-dns.com",
+      "doq": null,
+      "probe_url": "https://family.cloudflare-dns.com/dns-query?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Adult"
+      ],
+      "logging": "No IP logging (same policy as 1.1.1.1)",
+      "privacy_score": 4,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://developers.cloudflare.com/1.1.1.1/setup/",
+      "privacy_url": "https://developers.cloudflare.com/1.1.1.1/privacy/public-dns-resolver/",
+      "notes": "Blocks malware, phishing, and adult domains at the DNS layer with zero configuration.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "google-public-dns",
+      "name": "Google Public DNS",
+      "provider": "Google",
+      "category": "global",
+      "ipv4": [
+        "8.8.8.8",
+        "8.8.4.4"
+      ],
+      "ipv6": [
+        "2001:4860:4860::8888",
+        "2001:4860:4860::8844"
+      ],
+      "doh": "https://dns.google/dns-query",
+      "dot": "dns.google",
+      "doq": null,
+      "probe_url": "https://dns.google/resolve?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": false,
+      "ecs": "Yes (truncated /24, /56)",
+      "filtering": [
+        "None"
+      ],
+      "logging": "Temporary IP logs (24-48h), permanent anonymized logs",
+      "privacy_score": 2,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://developers.google.com/speed/public-dns",
+      "privacy_url": "https://developers.google.com/speed/public-dns/privacy",
+      "notes": "High reliability and optimal CDN geo-routing via EDNS Client Subnet (ECS), but retains full IP addresses for 24 to 48 hours.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "google-dns64",
+      "name": "Google Public DNS64",
+      "provider": "Google",
+      "category": "global",
+      "ipv4": [],
+      "ipv6": [
+        "2001:4860:4860::6464",
+        "2001:4860:4860::64"
+      ],
+      "doh": "https://dns64.dns.google/dns-query",
+      "dot": "dns64.dns.google",
+      "doq": null,
+      "probe_url": "https://dns64.dns.google/resolve?name=example.com&type=AAAA",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": false,
+      "ecs": "Yes (truncated /56)",
+      "filtering": [
+        "None"
+      ],
+      "logging": "Temporary IP logs (24-48h), permanent anonymized logs",
+      "privacy_score": 2,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://developers.google.com/speed/public-dns/docs/dns64",
+      "privacy_url": "https://developers.google.com/speed/public-dns/privacy",
+      "notes": "Synthesizes AAAA records for IPv6-only networks using NAT64 gateways (RFC 6147).",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "quad9-recommended",
+      "name": "Quad9 Recommended",
+      "provider": "Quad9 Foundation",
+      "category": "privacy",
+      "ipv4": [
+        "9.9.9.9",
+        "149.112.112.112"
+      ],
+      "ipv6": [
+        "2620:fe::fe",
+        "2620:fe::9"
+      ],
+      "doh": "https://dns.quad9.net/dns-query",
+      "dot": "dns.quad9.net",
+      "doq": null,
+      "probe_url": "https://dns.quad9.net/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DNSCrypt"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing"
+      ],
+      "logging": "Zero PII logging (Swiss non-profit, GDPR compliant)",
+      "privacy_score": 5,
+      "jurisdiction": "CH (Switzerland)",
+      "anycast": true,
+      "official_url": "https://www.quad9.net/",
+      "privacy_url": "https://www.quad9.net/service/privacy/",
+      "notes": "Swiss non-profit foundation aggregating 20+ threat intelligence feeds. Never stores client IP addresses.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "quad9-ecs",
+      "name": "Quad9 Secured + ECS",
+      "provider": "Quad9 Foundation",
+      "category": "filtering",
+      "ipv4": [
+        "9.9.9.11",
+        "149.112.112.11"
+      ],
+      "ipv6": [
+        "2620:fe::11",
+        "2620:fe::fe:11"
+      ],
+      "doh": "https://dns11.quad9.net/dns-query",
+      "dot": "dns11.quad9.net",
+      "doq": null,
+      "probe_url": "https://dns11.quad9.net/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "Yes (truncated /24)",
+      "filtering": [
+        "Malware",
+        "Phishing"
+      ],
+      "logging": "Zero PII logging (sends truncated subnet to authoritative NS)",
+      "privacy_score": 4,
+      "jurisdiction": "CH (Switzerland)",
+      "anycast": true,
+      "official_url": "https://www.quad9.net/service/service-addresses-and-features/",
+      "privacy_url": "https://www.quad9.net/service/privacy/",
+      "notes": "Same malware blocking and DNSSEC as 9.9.9.9, with EDNS Client Subnet enabled for better CDN localization.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "quad9-unsecured",
+      "name": "Quad9 Unsecured (No Filter)",
+      "provider": "Quad9 Foundation",
+      "category": "privacy",
+      "ipv4": [
+        "9.9.9.10",
+        "149.112.112.10"
+      ],
+      "ipv6": [
+        "2620:fe::10",
+        "2620:fe::fe:10"
+      ],
+      "doh": "https://dns10.quad9.net/dns-query",
+      "dot": "dns10.quad9.net",
+      "doq": null,
+      "probe_url": "https://dns10.quad9.net/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": false,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None"
+      ],
+      "logging": "Zero PII logging (Swiss non-profit)",
+      "privacy_score": 5,
+      "jurisdiction": "CH (Switzerland)",
+      "anycast": true,
+      "official_url": "https://www.quad9.net/service/service-addresses-and-features/",
+      "privacy_url": "https://www.quad9.net/service/privacy/",
+      "notes": "Unfiltered Quad9 resolver without blocklists or DNSSEC validation, intended for debugging or custom local validation.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "opendns-home",
+      "name": "OpenDNS Home",
+      "provider": "Cisco OpenDNS",
+      "category": "global",
+      "ipv4": [
+        "208.67.222.222",
+        "208.67.220.220"
+      ],
+      "ipv6": [
+        "2620:119:35::35",
+        "2620:119:53::53"
+      ],
+      "doh": "https://doh.opendns.com/dns-query",
+      "dot": "dns.opendns.com",
+      "doq": null,
+      "probe_url": "https://doh.opendns.com/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DNSCrypt"
+      ],
+      "dnssec": true,
+      "qname_minimization": false,
+      "ecs": "Yes",
+      "filtering": [
+        "Phishing",
+        "Malware"
+      ],
+      "logging": "Logs queries and IP addresses for security analytics",
+      "privacy_score": 2,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://www.opendns.com/setupguide/",
+      "privacy_url": "https://www.cisco.com/c/en/us/about/legal/privacy-full.html",
+      "notes": "Operated by Cisco Umbrella. Offers optional free account-based category filtering when linked to a home IP.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "opendns-familyshield",
+      "name": "OpenDNS FamilyShield",
+      "provider": "Cisco OpenDNS",
+      "category": "family",
+      "ipv4": [
+        "208.67.222.123",
+        "208.67.220.123"
+      ],
+      "ipv6": [
+        "2620:119:35::123",
+        "2620:119:53::123"
+      ],
+      "doh": "https://doh.familyshield.opendns.com/dns-query",
+      "dot": null,
+      "doq": null,
+      "probe_url": "https://doh.familyshield.opendns.com/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH"
+      ],
+      "dnssec": true,
+      "qname_minimization": false,
+      "ecs": "Yes",
+      "filtering": [
+        "Phishing",
+        "Malware",
+        "Adult"
+      ],
+      "logging": "Logs queries and IP addresses for security analytics",
+      "privacy_score": 2,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://www.opendns.com/setupguide/#familyshield",
+      "privacy_url": "https://www.cisco.com/c/en/us/about/legal/privacy-full.html",
+      "notes": "Pre-configured Cisco OpenDNS profile that blocks adult websites, proxies, and phishing domains without an account.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "adguard-default",
+      "name": "AdGuard DNS Default",
+      "provider": "AdGuard",
+      "category": "filtering",
+      "ipv4": [
+        "94.140.14.14",
+        "94.140.15.15"
+      ],
+      "ipv6": [
+        "2a10:50c0::ad1:ff",
+        "2a10:50c0::ad2:ff"
+      ],
+      "doh": "https://dns.adguard-dns.com/dns-query",
+      "dot": "dns.adguard-dns.com",
+      "doq": "quic://dns.adguard-dns.com",
+      "probe_url": "https://dns.adguard-dns.com/resolve?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ",
+        "DNSCrypt"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "Yes (anonymized)",
+      "filtering": [
+        "Ads",
+        "Trackers",
+        "Phishing",
+        "Malware"
+      ],
+      "logging": "No IP logging on public servers (aggregate stats for 24h)",
+      "privacy_score": 4,
+      "jurisdiction": "CY (Cyprus / EU)",
+      "anycast": true,
+      "official_url": "https://adguard-dns.io/en/public-dns.html",
+      "privacy_url": "https://adguard-dns.io/en/privacy.html",
+      "notes": "Supports all modern encrypted protocols including DNS-over-QUIC (DoQ). Blocks mobile app ads, trackers, and phishing.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "adguard-family",
+      "name": "AdGuard DNS Family",
+      "provider": "AdGuard",
+      "category": "family",
+      "ipv4": [
+        "94.140.14.15",
+        "94.140.15.16"
+      ],
+      "ipv6": [
+        "2a10:50c0::bad1:ff",
+        "2a10:50c0::bad2:ff"
+      ],
+      "doh": "https://family.adguard-dns.com/dns-query",
+      "dot": "family.adguard-dns.com",
+      "doq": "quic://family.adguard-dns.com",
+      "probe_url": "https://family.adguard-dns.com/resolve?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ",
+        "DNSCrypt"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "Yes (anonymized)",
+      "filtering": [
+        "Ads",
+        "Trackers",
+        "Phishing",
+        "Malware",
+        "Adult",
+        "SafeSearch"
+      ],
+      "logging": "No IP logging on public servers",
+      "privacy_score": 4,
+      "jurisdiction": "CY (Cyprus / EU)",
+      "anycast": true,
+      "official_url": "https://adguard-dns.io/en/public-dns.html",
+      "privacy_url": "https://adguard-dns.io/en/privacy.html",
+      "notes": "Combines ad and tracker blocking with adult content filtering and enforced SafeSearch on search engines.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "adguard-unfiltered",
+      "name": "AdGuard DNS Non-filtering",
+      "provider": "AdGuard",
+      "category": "privacy",
+      "ipv4": [
+        "94.140.14.140",
+        "94.140.14.141"
+      ],
+      "ipv6": [
+        "2a10:50c0::1:ff",
+        "2a10:50c0::2:ff"
+      ],
+      "doh": "https://unfiltered.adguard-dns.com/dns-query",
+      "dot": "unfiltered.adguard-dns.com",
+      "doq": "quic://unfiltered.adguard-dns.com",
+      "probe_url": "https://unfiltered.adguard-dns.com/resolve?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "Yes (anonymized)",
+      "filtering": [
+        "None"
+      ],
+      "logging": "No IP logging on public servers",
+      "privacy_score": 4,
+      "jurisdiction": "CY (Cyprus / EU)",
+      "anycast": true,
+      "official_url": "https://adguard-dns.io/en/public-dns.html",
+      "privacy_url": "https://adguard-dns.io/en/privacy.html",
+      "notes": "Raw encrypted DNS resolver with full DoQ/DoH/DoT support and no domain blocking.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "nextdns",
+      "name": "NextDNS",
+      "provider": "NextDNS Inc.",
+      "category": "filtering",
+      "ipv4": [
+        "45.90.28.0",
+        "45.90.30.0"
+      ],
+      "ipv6": [
+        "2a07:a8c0::",
+        "2a07:a8c1::"
+      ],
+      "doh": "https://dns.nextdns.io",
+      "dot": "dns.nextdns.io",
+      "doq": "quic://dns.nextdns.io",
+      "probe_url": "https://dns.nextdns.io/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "Yes (anonymized)",
+      "filtering": [
+        "Ads",
+        "Trackers",
+        "Malware",
+        "Phishing",
+        "Adult",
+        "Custom"
+      ],
+      "logging": "User-configurable (can disable logs completely, choose EU/CH/US storage)",
+      "privacy_score": 4,
+      "jurisdiction": "US (EU/CH log storage selectable)",
+      "anycast": true,
+      "official_url": "https://nextdns.io/",
+      "privacy_url": "https://nextdns.io/privacy",
+      "notes": "Cloud-managed customizable DNS (free up to 300,000 queries/month). Supports OISD, HaGeZi, StevenBlack, and custom blocklists.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "mullvad-unfiltered",
+      "name": "Mullvad DNS (Unfiltered)",
+      "provider": "Mullvad VPN AB",
+      "category": "privacy",
+      "ipv4": [
+        "194.242.2.2"
+      ],
+      "ipv6": [
+        "2a07:e340::2"
+      ],
+      "doh": "https://dns.mullvad.net/dns-query",
+      "dot": "dns.mullvad.net",
+      "doq": null,
+      "probe_url": "https://dns.mullvad.net/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None"
+      ],
+      "logging": "Strict zero logging (RAM-only infrastructure, audited)",
+      "privacy_score": 5,
+      "jurisdiction": "SE (Sweden)",
+      "anycast": true,
+      "official_url": "https://mullvad.net/en/help/dns-over-https-and-dns-over-tls",
+      "privacy_url": "https://mullvad.net/en/help/no-logging-data-policy",
+      "notes": "Encrypted-only public resolver (DoH/DoT, no plaintext UDP/53) operated by Mullvad with strict zero-log policy.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "mullvad-adblock",
+      "name": "Mullvad DNS (Adblock)",
+      "provider": "Mullvad VPN AB",
+      "category": "filtering",
+      "ipv4": [
+        "194.242.2.3"
+      ],
+      "ipv6": [
+        "2a07:e340::3"
+      ],
+      "doh": "https://adblock.dns.mullvad.net/dns-query",
+      "dot": "adblock.dns.mullvad.net",
+      "doq": null,
+      "probe_url": "https://adblock.dns.mullvad.net/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Ads",
+        "Trackers"
+      ],
+      "logging": "Strict zero logging (RAM-only)",
+      "privacy_score": 5,
+      "jurisdiction": "SE (Sweden)",
+      "anycast": true,
+      "official_url": "https://mullvad.net/en/help/dns-over-https-and-dns-over-tls",
+      "privacy_url": "https://mullvad.net/en/help/no-logging-data-policy",
+      "notes": "Encrypted DoH/DoT resolver blocking ads and trackers with Mullvad's open-source blocklists.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "mullvad-base",
+      "name": "Mullvad DNS (Base)",
+      "provider": "Mullvad VPN AB",
+      "category": "filtering",
+      "ipv4": [
+        "194.242.2.4"
+      ],
+      "ipv6": [
+        "2a07:e340::4"
+      ],
+      "doh": "https://base.dns.mullvad.net/dns-query",
+      "dot": "base.dns.mullvad.net",
+      "doq": null,
+      "probe_url": "https://base.dns.mullvad.net/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Ads",
+        "Trackers",
+        "Malware"
+      ],
+      "logging": "Strict zero logging (RAM-only)",
+      "privacy_score": 5,
+      "jurisdiction": "SE (Sweden)",
+      "anycast": true,
+      "official_url": "https://mullvad.net/en/help/dns-over-https-and-dns-over-tls",
+      "privacy_url": "https://mullvad.net/en/help/no-logging-data-policy",
+      "notes": "Blocks ads, trackers, and malware over encrypted DoH and DoT without storing query logs.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "mullvad-family",
+      "name": "Mullvad DNS (Family)",
+      "provider": "Mullvad VPN AB",
+      "category": "family",
+      "ipv4": [
+        "194.242.2.6"
+      ],
+      "ipv6": [
+        "2a07:e340::6"
+      ],
+      "doh": "https://family.dns.mullvad.net/dns-query",
+      "dot": "family.dns.mullvad.net",
+      "doq": null,
+      "probe_url": "https://family.dns.mullvad.net/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Ads",
+        "Trackers",
+        "Malware",
+        "Adult",
+        "Gambling"
+      ],
+      "logging": "Strict zero logging (RAM-only)",
+      "privacy_score": 5,
+      "jurisdiction": "SE (Sweden)",
+      "anycast": true,
+      "official_url": "https://mullvad.net/en/help/dns-over-https-and-dns-over-tls",
+      "privacy_url": "https://mullvad.net/en/help/no-logging-data-policy",
+      "notes": "Blocks ads, trackers, malware, adult content, and gambling domains over encrypted DNS.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "controld-unfiltered",
+      "name": "Control D Free (Unfiltered)",
+      "provider": "Control D (Windscribe)",
+      "category": "privacy",
+      "ipv4": [
+        "76.76.2.0",
+        "76.76.10.0"
+      ],
+      "ipv6": [
+        "2606:1a40::",
+        "2606:1a40:1::"
+      ],
+      "doh": "https://freedns.controld.com/p0",
+      "dot": "p0.freedns.controld.com",
+      "doq": "quic://p0.freedns.controld.com",
+      "probe_url": "https://freedns.controld.com/p0?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None"
+      ],
+      "logging": "No logging on free resolvers",
+      "privacy_score": 5,
+      "jurisdiction": "CA (Canada)",
+      "anycast": true,
+      "official_url": "https://controld.com/free-dns",
+      "privacy_url": "https://controld.com/privacy",
+      "notes": "Fast global Anycast network built by the Windscribe team. Full DoH, DoT, and DoQ support.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "controld-malware",
+      "name": "Control D Free (Malware)",
+      "provider": "Control D (Windscribe)",
+      "category": "filtering",
+      "ipv4": [
+        "76.76.2.1",
+        "76.76.10.1"
+      ],
+      "ipv6": [
+        "2606:1a40::1",
+        "2606:1a40:1::1"
+      ],
+      "doh": "https://freedns.controld.com/p1",
+      "dot": "p1.freedns.controld.com",
+      "doq": "quic://p1.freedns.controld.com",
+      "probe_url": "https://freedns.controld.com/p1?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing"
+      ],
+      "logging": "No logging on free resolvers",
+      "privacy_score": 5,
+      "jurisdiction": "CA (Canada)",
+      "anycast": true,
+      "official_url": "https://controld.com/free-dns",
+      "privacy_url": "https://controld.com/privacy",
+      "notes": "Blocks malware and phishing domains across IPv4, IPv6, DoH, DoT, and DoQ.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "controld-ads",
+      "name": "Control D Free (Ads + Trackers)",
+      "provider": "Control D (Windscribe)",
+      "category": "filtering",
+      "ipv4": [
+        "76.76.2.2",
+        "76.76.10.2"
+      ],
+      "ipv6": [
+        "2606:1a40::2",
+        "2606:1a40:1::2"
+      ],
+      "doh": "https://freedns.controld.com/p2",
+      "dot": "p2.freedns.controld.com",
+      "doq": "quic://p2.freedns.controld.com",
+      "probe_url": "https://freedns.controld.com/p2?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Ads",
+        "Trackers"
+      ],
+      "logging": "No logging on free resolvers",
+      "privacy_score": 5,
+      "jurisdiction": "CA (Canada)",
+      "anycast": true,
+      "official_url": "https://controld.com/free-dns",
+      "privacy_url": "https://controld.com/privacy",
+      "notes": "Free ad, tracker, and malware blocking resolver with low latency and zero-log guarantees.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "controld-family",
+      "name": "Control D Free (Family)",
+      "provider": "Control D (Windscribe)",
+      "category": "family",
+      "ipv4": [
+        "76.76.2.4",
+        "76.76.10.4"
+      ],
+      "ipv6": [
+        "2606:1a40::4",
+        "2606:1a40:1::4"
+      ],
+      "doh": "https://freedns.controld.com/family",
+      "dot": "family.freedns.controld.com",
+      "doq": "quic://family.freedns.controld.com",
+      "probe_url": "https://freedns.controld.com/family?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Ads",
+        "Trackers",
+        "Adult",
+        "SafeSearch"
+      ],
+      "logging": "No logging on free resolvers",
+      "privacy_score": 5,
+      "jurisdiction": "CA (Canada)",
+      "anycast": true,
+      "official_url": "https://controld.com/free-dns",
+      "privacy_url": "https://controld.com/privacy",
+      "notes": "Blocks malware, ads, trackers, adult domains, and drugs while enforcing SafeSearch.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "dns4eu-unfiltered",
+      "name": "DNS4EU Unfiltered",
+      "provider": "DNS4EU (EU Consortium)",
+      "category": "privacy",
+      "ipv4": [
+        "86.54.11.100",
+        "86.54.11.200"
+      ],
+      "ipv6": [
+        "2a13:1001::86:54:11:100",
+        "2a13:1001::86:54:11:200"
+      ],
+      "doh": "https://unfiltered.joindns4.eu/dns-query",
+      "dot": "unfiltered.joindns4.eu",
+      "doq": null,
+      "probe_url": "https://unfiltered.joindns4.eu/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None"
+      ],
+      "logging": "Zero PII logging, EU-hosted GDPR-compliant infrastructure",
+      "privacy_score": 5,
+      "jurisdiction": "EU (CZ / European Consortium)",
+      "anycast": true,
+      "routing": "EU Anycast",
+      "official_url": "https://www.joindns4.eu/",
+      "privacy_url": "https://www.joindns4.eu/",
+      "notes": "European Union co-funded public DNS resolver operated inside the EU with no filtering on the unfiltered endpoint."
+    },
+    {
+      "id": "dns4eu-protective",
+      "name": "DNS4EU Protective",
+      "provider": "DNS4EU (EU Consortium)",
+      "category": "filtering",
+      "ipv4": [
+        "86.54.11.1",
+        "86.54.11.201"
+      ],
+      "ipv6": [
+        "2a13:1001::86:54:11:1",
+        "2a13:1001::86:54:11:201"
+      ],
+      "doh": "https://protective.joindns4.eu/dns-query",
+      "dot": "protective.joindns4.eu",
+      "doq": null,
+      "probe_url": "https://protective.joindns4.eu/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing"
+      ],
+      "logging": "Zero PII logging, EU-hosted GDPR-compliant infrastructure",
+      "privacy_score": 5,
+      "jurisdiction": "EU (CZ / European Consortium)",
+      "anycast": true,
+      "routing": "EU Anycast",
+      "official_url": "https://www.joindns4.eu/",
+      "privacy_url": "https://www.joindns4.eu/",
+      "notes": "Blocks malware and phishing domains using European CERT and threat-intelligence feeds."
+    },
+    {
+      "id": "dns4eu-noads",
+      "name": "DNS4EU Protective + Ad Blocking",
+      "provider": "DNS4EU (EU Consortium)",
+      "category": "filtering",
+      "ipv4": [
+        "86.54.11.13",
+        "86.54.11.213"
+      ],
+      "ipv6": [
+        "2a13:1001::86:54:11:13",
+        "2a13:1001::86:54:11:213"
+      ],
+      "doh": "https://noads.joindns4.eu/dns-query",
+      "dot": "noads.joindns4.eu",
+      "doq": null,
+      "probe_url": "https://noads.joindns4.eu/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Ads",
+        "Trackers"
+      ],
+      "logging": "Zero PII logging, EU-hosted GDPR-compliant infrastructure",
+      "privacy_score": 5,
+      "jurisdiction": "EU (CZ / European Consortium)",
+      "anycast": true,
+      "routing": "EU Anycast",
+      "official_url": "https://www.joindns4.eu/",
+      "privacy_url": "https://www.joindns4.eu/",
+      "notes": "Combines DNS4EU malware and phishing protection with ad and tracker blocking."
+    },
+    {
+      "id": "dns4eu-child",
+      "name": "DNS4EU Protective + Child",
+      "provider": "DNS4EU (EU Consortium)",
+      "category": "family",
+      "ipv4": [
+        "86.54.11.12",
+        "86.54.11.212"
+      ],
+      "ipv6": [
+        "2a13:1001::86:54:11:12",
+        "2a13:1001::86:54:11:212"
+      ],
+      "doh": "https://child.joindns4.eu/dns-query",
+      "dot": "child.joindns4.eu",
+      "doq": null,
+      "probe_url": "https://child.joindns4.eu/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Adult"
+      ],
+      "logging": "Zero PII logging, EU-hosted GDPR-compliant infrastructure",
+      "privacy_score": 5,
+      "jurisdiction": "EU (CZ / European Consortium)",
+      "anycast": true,
+      "routing": "EU Anycast",
+      "official_url": "https://www.joindns4.eu/",
+      "privacy_url": "https://www.joindns4.eu/",
+      "notes": "Adds child-protection and adult-content blocking to DNS4EU Protective."
+    },
+    {
+      "id": "dns4eu-child-noads",
+      "name": "DNS4EU Protective + Child + Ads",
+      "provider": "DNS4EU (EU Consortium)",
+      "category": "family",
+      "ipv4": [
+        "86.54.11.11",
+        "86.54.11.211"
+      ],
+      "ipv6": [
+        "2a13:1001::86:54:11:11",
+        "2a13:1001::86:54:11:211"
+      ],
+      "doh": "https://child-noads.joindns4.eu/dns-query",
+      "dot": "child-noads.joindns4.eu",
+      "doq": null,
+      "probe_url": "https://child-noads.joindns4.eu/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Ads",
+        "Trackers",
+        "Adult"
+      ],
+      "logging": "Zero PII logging, EU-hosted GDPR-compliant infrastructure",
+      "privacy_score": 5,
+      "jurisdiction": "EU (CZ / European Consortium)",
+      "anycast": true,
+      "routing": "EU Anycast",
+      "official_url": "https://www.joindns4.eu/",
+      "privacy_url": "https://www.joindns4.eu/",
+      "notes": "All-in-one EU family profile blocking malware, phishing, ads, trackers, and adult domains."
+    },
+    {
+      "id": "cleanbrowsing-security",
+      "name": "CleanBrowsing Security",
+      "provider": "CleanBrowsing",
+      "category": "filtering",
+      "ipv4": [
+        "185.228.168.9",
+        "185.228.169.9"
+      ],
+      "ipv6": [
+        "2a0d:2a00:1::2",
+        "2a0d:2a00:2::2"
+      ],
+      "doh": "https://doh.cleanbrowsing.org/doh/security-filter/",
+      "dot": "security-filter-dns.cleanbrowsing.org",
+      "doq": null,
+      "probe_url": "https://doh.cleanbrowsing.org/doh/security-filter/?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DNSCrypt"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing"
+      ],
+      "logging": "No IP logging on free filters",
+      "privacy_score": 4,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://cleanbrowsing.org/filters/",
+      "privacy_url": "https://cleanbrowsing.org/privacy",
+      "notes": "Blocks phishing, malware, and spam domains while leaving adult and general content unfiltered.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "cleanbrowsing-adult",
+      "name": "CleanBrowsing Adult Filter",
+      "provider": "CleanBrowsing",
+      "category": "family",
+      "ipv4": [
+        "185.228.168.10",
+        "185.228.169.10"
+      ],
+      "ipv6": [
+        "2a0d:2a00:1::1",
+        "2a0d:2a00:2::1"
+      ],
+      "doh": "https://doh.cleanbrowsing.org/doh/adult-filter/",
+      "dot": "adult-filter-dns.cleanbrowsing.org",
+      "doq": null,
+      "probe_url": "https://doh.cleanbrowsing.org/doh/adult-filter/?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DNSCrypt"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Adult"
+      ],
+      "logging": "No IP logging on free filters",
+      "privacy_score": 4,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://cleanbrowsing.org/filters/",
+      "privacy_url": "https://cleanbrowsing.org/privacy",
+      "notes": "Blocks adult sites and malicious domains without restricting mixed-content platforms like Reddit.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "cleanbrowsing-family",
+      "name": "CleanBrowsing Family Filter",
+      "provider": "CleanBrowsing",
+      "category": "family",
+      "ipv4": [
+        "185.228.168.168",
+        "185.228.169.168"
+      ],
+      "ipv6": [
+        "2a0d:2a00:1::",
+        "2a0d:2a00:2::"
+      ],
+      "doh": "https://doh.cleanbrowsing.org/doh/family-filter/",
+      "dot": "family-filter-dns.cleanbrowsing.org",
+      "doq": null,
+      "probe_url": "https://doh.cleanbrowsing.org/doh/family-filter/?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DNSCrypt"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Adult",
+        "SafeSearch",
+        "Proxies/VPN"
+      ],
+      "logging": "No IP logging on free filters",
+      "privacy_score": 4,
+      "jurisdiction": "US",
+      "anycast": true,
+      "official_url": "https://cleanbrowsing.org/filters/",
+      "privacy_url": "https://cleanbrowsing.org/privacy",
+      "notes": "Strictest free family filter: blocks adult domains, proxy/VPN bypasses, and enforces YouTube Restricted Mode and SafeSearch.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "wikimedia-dns",
+      "name": "Wikimedia DNS",
+      "provider": "Wikimedia Foundation",
+      "category": "privacy",
+      "ipv4": [
+        "185.71.138.138"
+      ],
+      "ipv6": [
+        "2001:67c:930::1"
+      ],
+      "doh": "https://wikimedia-dns.org/dns-query",
+      "dot": "wikimedia-dns.org",
+      "doq": null,
+      "probe_url": "https://wikimedia-dns.org/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None"
+      ],
+      "logging": "No client IP logging (12h aggregated metrics only)",
+      "privacy_score": 5,
+      "jurisdiction": "US (Non-profit)",
+      "anycast": true,
+      "official_url": "https://meta.wikimedia.org/wiki/Wikimedia_DNS",
+      "privacy_url": "https://foundation.wikimedia.org/wiki/Policy:Privacy_policy",
+      "notes": "Encrypted-only (DoH/DoT) recursive resolver run by the Wikimedia Foundation with strict privacy and zero filtering.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "dns-sb",
+      "name": "DNS.SB",
+      "provider": "xTom / DNS.SB",
+      "category": "privacy",
+      "ipv4": [
+        "185.222.222.222",
+        "45.11.45.11"
+      ],
+      "ipv6": [
+        "2a09::",
+        "2a11::"
+      ],
+      "doh": "https://doh.dns.sb/dns-query",
+      "dot": "dot.sb",
+      "doq": null,
+      "probe_url": "https://doh.dns.sb/dns-query?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None"
+      ],
+      "logging": "No logging policy",
+      "privacy_score": 5,
+      "jurisdiction": "DE / EU",
+      "anycast": true,
+      "official_url": "https://dns.sb/",
+      "privacy_url": "https://dns.sb/privacy/",
+      "notes": "German-operated global Anycast resolver with DNSSEC, QNAME minimization, and zero filtering.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "gcore-dns",
+      "name": "Gcore Public DNS",
+      "provider": "Gcore",
+      "category": "global",
+      "ipv4": [
+        "95.85.95.85",
+        "2.56.220.2"
+      ],
+      "ipv6": [
+        "2a03:90c0:999d::1",
+        "2a03:90c0:9992::1"
+      ],
+      "doh": "https://dns.gcorelabs.com/dns-query",
+      "dot": "dns.gcorelabs.com",
+      "doq": null,
+      "probe_url": "https://dns.gcorelabs.com/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "Yes",
+      "filtering": [
+        "None"
+      ],
+      "logging": "No personal data logging",
+      "privacy_score": 4,
+      "jurisdiction": "LU (Luxembourg)",
+      "anycast": true,
+      "official_url": "https://gcore.com/dns",
+      "privacy_url": "https://gcore.com/legal",
+      "notes": "Runs on Gcore's 180+ PoP Anycast edge network with strong peering across Europe, CIS, and APAC.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "cira-protected",
+      "name": "CIRA Canadian Shield (Protected)",
+      "provider": "CIRA (.ca Registry)",
+      "category": "filtering",
+      "ipv4": [
+        "149.112.121.20",
+        "149.112.122.20"
+      ],
+      "ipv6": [
+        "2620:10a:80bb::20",
+        "2620:10a:80bc::20"
+      ],
+      "doh": "https://protected.canadianshield.cira.ca/dns-query",
+      "dot": "protected.canadianshield.cira.ca",
+      "doq": null,
+      "probe_url": "https://protected.canadianshield.cira.ca/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing"
+      ],
+      "logging": "Zero PII logging (audited Canadian non-profit)",
+      "privacy_score": 5,
+      "jurisdiction": "CA (Canada)",
+      "anycast": true,
+      "official_url": "https://www.cira.ca/en/canadian-shield/",
+      "privacy_url": "https://www.cira.ca/en/canadian-shield/privacy/",
+      "notes": "Operated by the Canadian Internet Registration Authority. Very fast in Canada and North America.",
+      "routing": "North America Anycast"
+    },
+    {
+      "id": "cira-family",
+      "name": "CIRA Canadian Shield (Family)",
+      "provider": "CIRA (.ca Registry)",
+      "category": "family",
+      "ipv4": [
+        "149.112.121.30",
+        "149.112.122.30"
+      ],
+      "ipv6": [
+        "2620:10a:80bb::30",
+        "2620:10a:80bc::30"
+      ],
+      "doh": "https://family.canadianshield.cira.ca/dns-query",
+      "dot": "family.canadianshield.cira.ca",
+      "doq": null,
+      "probe_url": "https://family.canadianshield.cira.ca/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Malware",
+        "Phishing",
+        "Adult"
+      ],
+      "logging": "Zero PII logging (Canadian non-profit)",
+      "privacy_score": 5,
+      "jurisdiction": "CA (Canada)",
+      "anycast": true,
+      "official_url": "https://www.cira.ca/en/canadian-shield/",
+      "privacy_url": "https://www.cira.ca/en/canadian-shield/privacy/",
+      "notes": "Adds adult content filtering on top of CIRA's malware and phishing feeds.",
+      "routing": "North America Anycast"
+    },
+    {
+      "id": "libredns",
+      "name": "LibreDNS",
+      "provider": "LibreOps",
+      "category": "privacy",
+      "ipv4": [
+        "116.202.176.26"
+      ],
+      "ipv6": [],
+      "doh": "https://doh.libredns.gr/dns-query",
+      "dot": "dot.libredns.gr",
+      "doq": null,
+      "probe_url": "https://doh.libredns.gr/dns-query?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None (Optional /noads endpoint)"
+      ],
+      "logging": "Strict zero logging (community-funded)",
+      "privacy_score": 5,
+      "jurisdiction": "GR / DE (EU)",
+      "anycast": false,
+      "official_url": "https://libredns.gr/",
+      "privacy_url": "https://libredns.gr/",
+      "notes": "Independent encrypted-only resolver hosted in Germany. Append /noads to the DoH URL to enable ad and tracker blocking.",
+      "routing": "Unicast (DE)"
+    },
+    {
+      "id": "uncensoreddns",
+      "name": "UncensoredDNS",
+      "provider": "Thomas Steen Rasmussen",
+      "category": "privacy",
+      "ipv4": [
+        "91.239.100.100",
+        "89.233.43.71"
+      ],
+      "ipv6": [
+        "2001:67c:28a4::",
+        "2a01:3a0:53:53::"
+      ],
+      "doh": null,
+      "dot": "anycast.uncensoreddns.org",
+      "doq": null,
+      "probe_url": null,
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "None"
+      ],
+      "logging": "Strict zero logging (operated since 2009)",
+      "privacy_score": 5,
+      "jurisdiction": "DK (Denmark)",
+      "anycast": true,
+      "official_url": "https://blog.uncensoreddns.org/",
+      "privacy_url": "https://blog.uncensoreddns.org/",
+      "notes": "Long-running independent Danish DNS service committed to uncensored resolution without query logging.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "rethinkdns",
+      "name": "RethinkDNS",
+      "provider": "Celzero",
+      "category": "filtering",
+      "ipv4": [],
+      "ipv6": [],
+      "doh": "https://sky.rethinkdns.com/",
+      "dot": "sky.rethinkdns.com",
+      "doq": null,
+      "probe_url": "https://sky.rethinkdns.com/?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": true,
+      "qname_minimization": true,
+      "ecs": "No",
+      "filtering": [
+        "Ads",
+        "Trackers",
+        "Malware",
+        "Custom"
+      ],
+      "logging": "No query logging (open-source resolver)",
+      "privacy_score": 5,
+      "jurisdiction": "IN / Global Edge",
+      "anycast": true,
+      "official_url": "https://rethinkdns.com/",
+      "privacy_url": "https://rethinkdns.com/privacy",
+      "notes": "Open-source encrypted DNS with 190+ composable blocklists encoded directly into the custom DoH/DoT URL without requiring an account.",
+      "routing": "Global Anycast"
+    },
+    {
+      "id": "alidns",
+      "name": "AliDNS (Alibaba)",
+      "provider": "Alibaba Cloud",
+      "category": "regional",
+      "ipv4": [
+        "223.5.5.5",
+        "223.6.6.6"
+      ],
+      "ipv6": [
+        "2400:3200::1",
+        "2400:3200:baba::1"
+      ],
+      "doh": "https://dns.alidns.com/dns-query",
+      "dot": "dns.alidns.com",
+      "doq": "quic://dns.alidns.com",
+      "probe_url": "https://dns.alidns.com/resolve?name=example.com&type=A",
+      "probe_cors": true,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT",
+        "DoQ"
+      ],
+      "dnssec": false,
+      "qname_minimization": false,
+      "ecs": "Yes",
+      "filtering": [
+        "None"
+      ],
+      "logging": "Subject to Chinese telecommunications regulations",
+      "privacy_score": 1,
+      "jurisdiction": "CN (China)",
+      "anycast": true,
+      "official_url": "https://www.alidns.com/",
+      "privacy_url": "https://www.alidns.com/",
+      "notes": "Primary low-latency public DNS inside Mainland China and APAC with full DoH, DoT, and DoQ support.",
+      "routing": "APAC / China Anycast"
+    },
+    {
+      "id": "dnspod",
+      "name": "DNSPod Public DNS+",
+      "provider": "Tencent Cloud",
+      "category": "regional",
+      "ipv4": [
+        "119.29.29.29"
+      ],
+      "ipv6": [
+        "2402:4e00::"
+      ],
+      "doh": "https://doh.pub/dns-query",
+      "dot": "dot.pub",
+      "doq": null,
+      "probe_url": "https://doh.pub/dns-query?name=example.com&type=A",
+      "probe_cors": false,
+      "protocols": [
+        "UDP/53",
+        "TCP/53",
+        "DoH",
+        "DoT"
+      ],
+      "dnssec": false,
+      "qname_minimization": false,
+      "ecs": "Yes",
+      "filtering": [
+        "None"
+      ],
+      "logging": "Subject to Chinese telecommunications regulations",
+      "privacy_score": 1,
+      "jurisdiction": "CN (China)",
+      "anycast": true,
+      "official_url": "https://www.dnspod.cn/products/publicdns",
+      "privacy_url": "https://www.dnspod.cn/products/publicdns",
+      "notes": "Widely used Anycast resolver across Mainland China and East Asia with ECS support.",
+      "routing": "APAC / China Anycast"
+    }
+  ]
+}

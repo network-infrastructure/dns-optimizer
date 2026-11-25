@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-base="../">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best DNS for iPhone and iPad: Wi-Fi DNS and Encrypted DoH Profiles | DNS Optimizer</title>
+  <meta name="description" content="Change DNS on iOS for Wi-Fi networks or install encrypted DNS-over-HTTPS and DNS-over-TLS profiles on iPhone and iPad.">
+  <link rel="canonical" href="https://network-infrastructure.github.io/dns-optimizer/iphone/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Best DNS for iPhone and iPad: Wi-Fi DNS and Encrypted DoH Profiles">
+  <meta property="og:description" content="Change DNS on iOS for Wi-Fi networks or install encrypted DNS-over-HTTPS and DNS-over-TLS profiles on iPhone and iPad.">
+  <meta property="og:url" content="https://network-infrastructure.github.io/dns-optimizer/iphone/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;500;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "DNS Optimizer", "item": "https://network-infrastructure.github.io/dns-optimizer/" },
+      { "@type": "ListItem", "position": 2, "name": "Best DNS for iPhone", "item": "https://network-infrastructure.github.io/dns-optimizer/iphone/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="../">
+        <span>DNS Optimizer</span>
+        <span class="brand-ver">v1.0</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../dns-speed-test/">Speed test</a></li>
+          <li><a href="../dns-changer/">DNS changer</a></li>
+          <li><a href="../privacy/">Privacy</a></li>
+          <li><a href="../ad-blocking/">Ad blocking</a></li>
+          <li><a href="../checker/">Checker</a></li>
+          <li><a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>Best DNS for iPhone</h1>
+          <p class="hero-lead">Set manual DNS per Wi-Fi network or use encrypted DNS-over-HTTPS across Wi-Fi and 5G.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="https://github.com/network-infrastructure/dns-optimizer">Download Rust app</a>
+            <a class="btn" href="../">All DNS guides</a>
+          </div>
+        </div>
+        <div class="box">
+        <h3>Run native Rust CLI</h3>
+        <pre class="cli-block"><code>dns-optimizer list --profile privacy</code></pre>
+        <a class="btn btn--primary btn--sm" href="https://github.com/network-infrastructure/dns-optimizer">Get Rust app on GitHub</a>
+      </div>
+      </div>
+    </section>
+
+    
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Recommended DNS servers</h2>
+        </div>
+        <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Resolver</th>
+          <th>IPv4</th>
+          <th>DoT hostname</th>
+          <th>DNSSEC</th>
+          <th>Filtering</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <td>Cloudflare 1.1.1.1</td>
+        <td>1.1.1.1, 1.0.0.1</td>
+        <td>one.one.one.one</td>
+        <td>Yes</td>
+        <td>None</td>
+      </tr>
+<tr>
+        <td>Quad9 Recommended</td>
+        <td>9.9.9.9, 149.112.112.112</td>
+        <td>dns.quad9.net</td>
+        <td>Yes</td>
+        <td>Malware, Phishing</td>
+      </tr>
+<tr>
+        <td>AdGuard DNS Default</td>
+        <td>94.140.14.14, 94.140.15.15</td>
+        <td>dns.adguard-dns.com</td>
+        <td>Yes</td>
+        <td>Ads, Trackers, Phishing, Malware</td>
+      </tr>
+<tr>
+        <td>NextDNS</td>
+        <td>45.90.28.0, 45.90.30.0</td>
+        <td>dns.nextdns.io</td>
+        <td>Yes</td>
+        <td>Ads, Trackers, Malware, Phishing, Adult, Custom</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="wrap">
+        
+      <h2>Manual Wi-Fi DNS on iOS</h2>
+      <p>Open Settings, tap Wi-Fi, tap the info icon next to your network, scroll to Configure DNS, switch from Automatic to Manual, remove the router IP, and add your chosen primary and secondary IPv4 addresses.</p>
+      <h2>Encrypted DNS across cellular and Wi-Fi</h2>
+      <p>Apple supports native DoH and DoT via configuration profiles (.mobileconfig) provided by Cloudflare, Quad9, Mullvad, AdGuard, and NextDNS.</p>
+    
+        <h2>Rust CLI command</h2>
+        <pre class="cli-block"><code>dns-optimizer list --profile privacy</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-statement">Free MIT-licensed Rust software for real DNS benchmarks and safe resolver switching.</p>
+      <div class="footer-links">
+        <a href="../">Home</a>
+        <a href="../dns-speed-test/">Speed test</a>
+        <a href="../dns-changer/">DNS changer</a>
+        <a href="../leak-test/">Leak test</a>
+        <a href="../checker/">Checker</a>
+        <a href="https://github.com/network-infrastructure/dns-optimizer">GitHub</a>
+      </div>
+      <p class="muted">Changing DNS speeds up domain lookups, not active in-game ping.</p>
+    </div>
+  </footer>
+
+  <script src="../app.js"></script>
+</body>
+</html>

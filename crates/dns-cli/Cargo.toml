@@ -1,0 +1,20 @@
+[package]
+name = "dns-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Cross-platform CLI for DNS Optimizer: DNS speed test, benchmark, diagnostics, and system DNS changer"
+
+[[bin]]
+name = "dns-optimizer"
+path = "src/main.rs"
+
+[dependencies]
+dns-core = { path = "../dns-core" }
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+clap.workspace = true
+chrono.workspace = true
