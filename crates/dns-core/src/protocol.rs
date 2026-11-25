@@ -310,6 +310,7 @@ pub async fn query_dot(
     let server_name = ServerName::try_from(tls_hostname.to_string())
         .map_err(|_| ProtocolError::InvalidServerName(tls_hostname.to_string()))?;
 
+    let _ = rustls::crypto::ring::default_provider().install_default();
     let mut root_store = RootCertStore::empty();
     root_store.extend(webpki_roots::TLS_SERVER_ROOTS.iter().cloned());
     let config = ClientConfig::builder()
